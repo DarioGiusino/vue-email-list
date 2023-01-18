@@ -22,16 +22,20 @@ const app = Vue.createApp({
                 // Push the random mail on the data array
                 this.mailList.push(newMail);
             })
+        },
+
+        // Generate n mail
+        generateMailList(n) {
+            // for n times...
+            for(let i = 0; i < n; i++){
+                // Execute the method
+                this.getRandomMail()
+            }
         }
     },
     // Upon page starting...
     mounted() {
-        // For 10 times...
-        for(let i = 0; i < 10; i++){
-            // Execute the method
-            this.getRandomMail()
-        }
-        
+        this.generateMailList(10);
     }
 });
 
