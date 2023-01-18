@@ -16,7 +16,8 @@
 </head>
 <body>
     <div id="app">
-        <ul v-if="mailList.length === 10">
+        <div v-if="mailList.length !== 10">is loading</div>
+        <ul v-else>
             <li v-for="mail in mailList">{{ mail }}</li>
         </ul>
     </div>
